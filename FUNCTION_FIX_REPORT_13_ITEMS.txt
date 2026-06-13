@@ -1,0 +1,24 @@
+LexLingo function patch report
+
+Applied fixes:
+1. List module now uses the active category/search pool and renders the category word list with per-word speech buttons.
+2. Button and control labels are non-selectable; input/textarea text remains selectable.
+3. Example sentence in Card module has its own speech control.
+4. Speech buttons toggle: tapping the same speech button while it is reading stops playback. AndroidBridge.stop() added.
+5. Logged-in Card module: Bildim -> Biliyorum; long-press Biliyorum removes known status and subtracts its score/progress point.
+6. Search input is debounced and quiz option generation no longer sorts the entire dictionary, reducing UI freezes.
+7. System notices/warnings/toasts are styled in gold.
+8. Turkish translation speech uses tr-TR; English uses en-US; Dutch uses nl-NL.
+9. Header/logo area remains sticky while vertical page scrolling remains available.
+10. Okunuş row now displays the written pronunciation but speaks the underlying Dutch word/sentence in Dutch pronunciation.
+11. Speech controls received a subtle gold accent dot.
+12. Progress/scale/category/language rows are further tightened by CSS.
+13. Translation order follows the selected language direction while Dutch remains in its fixed Dutch position.
+
+Files patched:
+- flm_app/index.html
+- app/src/main/assets/index.html
+- app/src/main/java/com/netadalet/dutchmb/MainActivity.java
+
+Validation:
+- JavaScript syntax checked with node --check for both index.html script blocks.
